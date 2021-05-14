@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partial/head.ejs") %>
+</head>
+
+<body>
+    <div class="container">
+        <%- include('../partial/nav.ejs')  %>
+            <main class="detail w3-center">
+                <% if (blog) { %>
+                    <article class="uk-article card pl-3 pb-3">
+
+                        <h1 class="uk-article-title " style="color: #26e07f;">
+                            <a class="uk-link-reset" href="">
+                                <%= blog.title %>
+                            </a>
+                        </h1>
+                        <h3 class="w3-text-grey">
+                            <%= blog.headline %>
+                        </h3>
+                        <p class="w3-text-grey">
+                            <%= blog.body %>
+                        </p>
+                        <p class="uk-article-meta w3-left">Written by
+                            <a href="#">
+                                <%= blog.author %>
+                            </a>
+                            <%= blog.createdAt %> . Posted in <a href="#">Blog</a></p>
+                    </article>
+                    <% } else { %>
+                        <% } %>
+
+            </main>
+            <%- include('../partial/b_nav.ejs')  %>
+    </div>
+</body>
+<%- include("../partial/footer.ejs") %>
+
+</html>

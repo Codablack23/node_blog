@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partial/head.ejs") %>
+</head>
+
+<body>
+    <div class="container">
+        <%- include('../partial/nav.ejs')  %>
+            <div id="all_blogs">
+                <% if (blog.length > 0) { %>
+                    <% blog.forEach(element => { %>
+                        <article class="uk-article card pl-3 pb-3">
+
+                            <h1 class="uk-article-title " style="color: #26e07f;">
+                                <a class="uk-link-reset" href="">
+                                    <%= element.title %>
+                                </a>
+                            </h1>
+
+                            <p class="uk-article-meta">Written by
+                                <a href="#">
+                                    <%= element.author %>
+                                </a> on
+                                <%= element.createdAt %> Posted in <a href="#">My Blog</a></p>
+
+                            <p class="uk-text-lead w3-text-grey">
+                                <%= element.headline %>
+                            </p>
+
+                            <p class="w3-text-grey">
+                                <%= element.body %>
+                            </p>
+
+                            <div class="uk-grid-small uk-child-width-auto" uk-grid>
+                                <div class="d-flex">
+                                    <a class="uk-button" href="/blogs/<%= element.id  %> "><button class="uk-button uk-button-default" style="color:#26e07f;">Read More..</button></a>
+                                    <a class="uk-button ml-md-auto "><button class="uk-button uk-button-default" onclick="deletePost('<%= element.id %>')" style="background-color:#26e07f;color: white;">Delete</button></a>
+                                </div>
+                            </div>
+
+                        </article>
+                        <% }) %>
+                            <% }else{%>
+                                <div class="w3-center" style="margin-top: 7%;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="#26e07f" class="bi bi-file-earmark-medical" viewBox="0 0 16 16">
+                                        <path d="M7.5 5.5a.5.5 0 0 0-1 0v.634l-.549-.317a.5.5 0 1 0-.5.866L6 7l-.549.317a.5.5 0 1 0 .5.866l.549-.317V8.5a.5.5 0 1 0 1 0v-.634l.549.317a.5.5 0 1 0 .5-.866L8 7l.549-.317a.5.5 0 1 0-.5-.866l-.549.317V5.5zm-2 4.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z"/>
+                                        <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                                      </svg>
+                                    <h3 class="w3-text-grey">No Posts Yet</h3>
+                                    <p class="w3-text-grey">Add Your Own Post enjoy Our Services</p>
+                                </div>
+                                <% } %>
+
+
+            </div>
+            <%- include('../partial/b_nav.ejs')  %>
+    </div>
+</body>
+<%- include("../partial/footer.ejs") %>
+
+</html>

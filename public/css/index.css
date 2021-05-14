@@ -1,0 +1,50 @@
+body {
+    margin: 0%;
+}
+
+#blog-head {
+    font-weight: bolder;
+    font-size: large;
+}
+
+#mmynav {
+    padding: 0%;
+    margin: 0%;
+}
+
+a:hover {
+    color: #26e07f;
+}
+
+textarea:hover,
+textarea:focus {
+    outline: #26e07f;
+}
+
+#all_blogs {
+    margin-bottom: 11%;
+}
+
+#home {
+    margin-top: 6%;
+}
+
+@media screen and (max-width:577px) {
+    #all_blogs {
+        margin-bottom: 40%;
+    }
+    #home {
+        margin-top: 17%;
+    }
+}
+
+
+/* .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+} */
